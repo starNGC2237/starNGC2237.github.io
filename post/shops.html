@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Keep Team">
+    
+    <title>
+        
+            任务书 |
+        
+        Keep Theme
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"blog.starlibrary.online","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Keep Theme
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">任务书</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Keep Team</span>
+                        
+                            <span class="author-label">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-11-15 23:55:37
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/vue/">vue</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/vue/">vue</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="项目背景及建设目标"><a href="#项目背景及建设目标" class="headerlink" title="项目背景及建设目标"></a>项目背景及建设目标</h2><p>当今社会，商店扮演着重要的社会职能，但是随着互联网的迅速发展，传统的线下购物方式已经无法满足人们快节奏的生活需求。在线购物系统已成为提升商店效率的重要技术手段，而现有的在线购物系统存在着所购物品运输时间长、补货慢、无法与线下商店进行交互等缺点。因此开发一个在线自助购物平台是很有必要的，这样可以大大所购物品的处理效率，在一定程度上降低了人力物力的成本。该在线自助购物平台可以在实现顾客在网上或线下购物自助化，进行多仓发货、商店无货本地仓库发货及顾客商店自助取货，节约了本来需耗费的时间，也间接地提升了每日的营业额。在毕业设计期间，本人选择“基于Vue.js的在线自助购物平台的设计与实现”课题开展相关问题研究，主要基于本科在学期间，系统学习了相关知识与技术，并对于在线购物平台有所研究，具备开发这一课题的技术与能力储备。</p>
+<h2 id="建设内容"><a href="#建设内容" class="headerlink" title="建设内容"></a>建设内容</h2><pre><code>待定
+
+前端方面：使用nginx代理vue项目，使用
+
+&gt; Vue2(可能会升级为Vue3)
+&gt; vue-cli(Vue.js开发的标准工具,即Vue.js的脚手架)
+&gt; vueRouter(Vue.js官方的路由管理器)
+&gt; vuex(Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。)(不用，我的项目太简单了)
+&gt; Axios(基于promise的HTTP库)
+&gt; elementUI(UI框架)
+&gt; Electron(使用 JavaScript，HTML 和 CSS 构建跨平台的桌面应用程序)(也许会用)
+
+来编写前端工程
+
+
+后端方面：使用tomcat部署后端项目，并接受nginx代理
+&gt; Spring boot
+&gt; express(可以学习，但是应该不用)
+</code></pre>
+<h1 id="系统功能设计"><a href="#系统功能设计" class="headerlink" title="系统功能设计"></a>系统功能设计</h1><h2 id="角色"><a href="#角色" class="headerlink" title="角色"></a>角色</h2><h2 id="一、选题意义"><a href="#一、选题意义" class="headerlink" title="一、选题意义"></a>一、选题意义</h2><p>当今社会，商店扮演着重要的社会职能，但是随着互联网的迅速发展，传统的线下购物方式已经无法满足人们快节奏的生活需求。在线购物系统已成为提升商店效率的重要技术手段，而现有的在线购物系统存在着所购物品运输时间长、补货慢、无法与线下商店进行交互等缺点。因此开发一个在线自助购物平台是很有必要的，这样可以大大所购物品的处理效率，在一定程度上降低了人力物力的成本。该在线自助购物平台可以在实现顾客在网上或线下购物自助化，进行多仓发货、商店无货本地仓库发货及顾客商店自助取货，节约了本来需耗费的时间，也间接地提升了每日的营业额。</p>
+<h2 id="二、论文综述"><a href="#二、论文综述" class="headerlink" title="二、论文综述"></a>二、论文综述</h2><p>欧美地区电子商务起步早、应用广。1995年，亚马逊和易贝在美国成立。此后，这种以互联网为依托进行商品和服务交易的新兴经济活动，迅速普及全球。新一轮科技革命和产业变革交汇孕育的电子商务，极大提高了经济运行的质量和效率，改变了人类的生产生活方式。2016年，全球电子商务市场规模超过25万亿美元，成为世界经济的亮点和新增长点。亚洲地区电子商务体量大、发展快。电子商务起源于欧美，但兴盛于亚洲。中国网络零售交易额自2013年起已稳居世界第一。巨大的网民红利将继续支持亚洲市场发展。在线购物系统可以提供更优质多服务，可以为用户提供更加全面的商品信息。降低成本的同时可以容纳几乎处于服务区域任何地方的客户。因此在线购物系统已成为提升商店效率的重要技术手段，而现有的在线购物系统存在着所购物品运输时间长、补货慢、无法与线下商店进行交互等缺点。</p>
+<p>因此开发一个在线自助购物平台是很有必要的，这样可以大大所购物品的处理效率，在一定程度上降低了人力物力的成本。该在线自助购物平台可以在实现顾客在网上或线下购物自助化，进行多仓发货、商店无货本地仓库发货及顾客商店自助取货，节约了本来需耗费的时间，也间接地提升了每日的营业额。</p>
+<h2 id="三、课题研究内容"><a href="#三、课题研究内容" class="headerlink" title="三、课题研究内容"></a>三、课题研究内容</h2><p>(1) 在线自助购物平台</p>
+<p>(2) 实现顾客在网上或线下购物自助化</p>
+<p>(3) 进行多仓发货</p>
+<p>(4) 商店无货本地仓库发货</p>
+<p>(5) 顾客网上购买后商店自助取货</p>
+<h2 id="四、课题研究方法及研究手段"><a href="#四、课题研究方法及研究手段" class="headerlink" title="四、课题研究方法及研究手段"></a>四、课题研究方法及研究手段</h2><p>在论证项目可行性，制定项目初步计划，查阅文献资料点基础上，建立系统总体结构，划分功能模块，定义各功能模块接口及设计数据库。与此同时设计各模块具体实现算法，确定模块间详细接口及编写程序源代码，进行模块测试和调试并测试完善系统。</p>
+<ol>
+<li>系统的体系结构</li>
+</ol>
+<p>相对于传统的C／S结构，在线自助购物平台采用基于B／S的三层体系结构，即Web浏览器、Web服务器及数据库系统。</p>
+<ol start="2">
+<li>系统总体功能模块</li>
+</ol>
+<p>购物平台系统分为前台管理和后台管理。前台管理包括浏览商品、查询商品、订购商品、购物车、用户信息维护等功能。后台管理包括商品管理、定单管理和用户管理等模块。</p>
+<p>(1)前端方面：使用nginx代理前端Vue项目，并使用Vue.js框架、vue-cli与vueRouter来来编写前端工程</p>
+<p>(2)后端方面：使用tomcat部署后端项目，并接受nginx代理，并使用Spring boot来编写后端api接口。</p>
+<p>(3)环境：腾讯云轻量级应用服务器、Ubuntu 20.04、nginx/1.18.0 (Ubuntu)、nvm 0.39.0、node.js v14.17.0、npm 6.14.13、openjdk openjdk-17-jdk、tomcat apache-tomcat-9.0.54</p>
+<h2 id="五、课题研究步骤"><a href="#五、课题研究步骤" class="headerlink" title="五、课题研究步骤"></a>五、课题研究步骤</h2><p>2021年12月03日至2021年12月12日  论证项目可行性，制定项目初步计划，查阅文献资料</p>
+<p>2021年12月13日至2022年1月02日  确定系统运行环境，系统功能及性能要求，确认项目开发计划</p>
+<p>2022年1月03日至2022年1月30日   建立系统总体结构，划分功能模块，定义各功能模块接口，数据库设计</p>
+<p>2022年1月31日至2022年2月27日   设计各模块具体实现算法，确定模块间详细接口</p>
+<p>2022年2月28日至2022年3月27日   编写程序源代码，进行模块测试和调试</p>
+<p>2022年3月28日至2022年4月17日   系统测试并完善，纠正错误，完善应用</p>
+<p>2022年4月18日至2022年5月29日   撰写、修改并打印毕业设计说明书，准备答辩</p>
+<p>2022年5月30日至2022年6月03日   毕业设计答辩</p>
+<h2 id="六、参考文献资料"><a href="#六、参考文献资料" class="headerlink" title="六、参考文献资料"></a>六、参考文献资料</h2><p>[1]方生,秦晓安,王睿.基于前后端分离技术的在线购物平台研究与实现[J].黄河水利职业技术学院学报,2021,33(04):50-54.</p>
+<p>[2]胡开华,张玉静,陈明禄等.基于Vue.js的Web应用开发教学案例设计与实现[J].信息与电脑(理论版),2021,33(18):91-94.</p>
+<p>[3]刘紫薇. 基于MVVM设计模式的在线教育系统的设计与实现[D].北京邮电大学,2021.</p>
+<p>[4]焦灵.基于Web的购物网站系统设计[J].电脑编程技巧与维护,2018(12):131-133+139.</p>
+<p>[5]罗业丁,杨振南,贺英健.基于WEB前端技术的校园购物网站的设计与实现[J].信息记录材料,2020,21(08):209-210.</p>
+<p>[6]陈秋玲.基于JavaWeb的图书购物网站的设计与实现[J].电脑知识与技术,2019,15(16):36-38.</p>
+<p>[7]王伟,常庆丽,吴朝霞.基于Springboot+Vue的精准帮扶系统研究与实现[J].河南科技,2021,40(27):12-14.</p>
+<p>[8]焦鹏珲.基于SpringBoot和Vue框架的电子招投标系统的设计与实现[D].南京大学,2018.</p>
+<p>[9]邱璐璐,陈俊仁.基于SpringBoot和Vue框架的高校代领系统设计与实现[J].信息技术与信息化,2021(04):25-27.</p>
+<p>[10]方生.基于“Vue.js”前端框架技术的研究[J].电脑知识与技术,2021,17(19):59-60+64.</p>
+<p>[11]刘启伟. 基于Vue.js框架的Web前端开发工具的设计与实现[D].北京邮电大学,2021.</p>
+<p>[12]朱文忠,彭楠,曹丰等.基于vue.js的学术科技活动线上交流的设计与实现[J].长江信息通信,2021,34(04):128-131.</p>
+<p>[13]胡开华,张玉静,陈明禄等.基于Vue.js的Web应用开发教学案例设计与实现[J].信息与电脑(理论版),2021,33(18):91-94.</p>
+<p>[14]李俊甲,许烨.基于Java的购物网站设计与开发[J].信息与电脑(理论版),2020,32(23):86-88.</p>
+
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/post/vue%E5%9D%91.html"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">vue中遇到的坑</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/post/blog-nginx.html"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">blog-nginx</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Keep Team</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+
+
+
+<div class="post-scripts">
+    
+</div>
+
+
+
+</body>
+</html>

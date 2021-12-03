@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Keep Team">
+    
+    <title>
+        
+            玩客云刷入armbian并安装软件 |
+        
+        Keep Theme
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"blog.starlibrary.online","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Keep Theme
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">玩客云刷入armbian并安装软件</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Keep Team</span>
+                        
+                            <span class="author-label">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-08-27 08:39:32
+    </span>
+    
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="安装资源一览"><a href="#安装资源一览" class="headerlink" title="安装资源一览"></a>安装资源一览</h1><p><a class="link"   target="_blank" rel="noopener" href="https://www.aliyundrive.com/s/dBMzUQUajmc" >https://www.aliyundrive.com/s/dBMzUQUajmc<i class="fas fa-external-link-alt"></i></a></p>
+<h1 id="拆机"><a href="#拆机" class="headerlink" title="拆机"></a>拆机</h1><ol>
+<li>使用热吹风机加热后盖，从如图usb接口缝隙处撬开后盖</li>
+<li>拧下6个螺丝，拉出板子</li>
+</ol>
+<h1 id="刷入底层包"><a href="#刷入底层包" class="headerlink" title="刷入底层包"></a>刷入底层包</h1><ol>
+<li>使用双头usb线或typec转usb线（就是充电线）（如果你电脑有typec口的话）连接电脑，另一端插入远离网口的那一个usb口</li>
+<li>打开刷机软件，选择底层包，使用导线或镊子短接两个短接点（如图），此时电脑会有硬件连接成功的声音，软件显示连接成功。勾选抹除密匙，点击开始</li>
+<li>如果连接失败的话，在开机时按住重置键试试</li>
+<li>如果刷机失败的话，拔插线重新刷入，玩客云是刷不死的</li>
+</ol>
+<h1 id="刷入armbian系统"><a href="#刷入armbian系统" class="headerlink" title="刷入armbian系统"></a>刷入armbian系统</h1><ol>
+<li>使用烧录工具格式化u盘，然后刷入img包</li>
+<li>将u盘插入靠近网口的那一个usb口，将usb-ttl如图插上板子，连接上串口，插上电源，开机</li>
+<li>用户名root密码1234,开机后需要修改密码，改完后如果要改名字直接ctrl+c，然后输用户名密码进入系统</li>
+<li>开机会自动获得ip地址，去路由器管理页面拿到ip，或者使用<br><code>ifconfig</code>命令得到ip</li>
+<li>使用ssh连接玩客云，</li>
+<li>执行<code>cd /boot/install</code></li>
+<li>执行 <code>bash install.sh</code></li>
+<li>等待写入emmc完成，完成后会熄灯并在终端提示</li>
+<li>拔下u盘、电源，重新上电，等待灯闪烁完成并亮蓝灯</li>
+<li>路由器获得iP，ssh进入</li>
+</ol>
+<h1 id="安装ttyd"><a href="#安装ttyd" class="headerlink" title="安装ttyd"></a>安装ttyd</h1><blockquote>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/tsl0922/ttyd" >https://github.com/tsl0922/ttyd<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<ol>
+<li>依次执行：</li>
+<li><pre><code>sudo apt-get install build-essential cmake git libjson-c-dev libwebsockets-dev
+</code></pre>
+</li>
+<li><pre><code>git clone https://github.com/tsl0922/ttyd.git
+</code></pre>
+</li>
+<li><pre><code>chmod u+x ttyd
+</code></pre>
+</li>
+<li><pre><code>cd ttyd &amp;&amp; mkdir build &amp;&amp; cd build
+</code></pre>
+</li>
+<li><pre><code>cmake ..
+</code></pre>
+</li>
+<li><pre><code>make &amp;&amp; sudo make install
+</code></pre>
+</li>
+<li><pre><code>sudo ./ttyd -p 7681 login
+</code></pre>
+</li>
+<li>安装完成后访问ip:7681即可使用ttyd</li>
+<li>ttyd自启动：</li>
+</ol>
+<h1 id="安装zsh及oh-my-zsh及自动补全"><a href="#安装zsh及oh-my-zsh及自动补全" class="headerlink" title="安装zsh及oh my zsh及自动补全"></a>安装zsh及oh my zsh及自动补全</h1><h1 id="安装filebrowser文件浏览器"><a href="#安装filebrowser文件浏览器" class="headerlink" title="安装filebrowser文件浏览器"></a>安装filebrowser文件浏览器</h1><h1 id="安装ServerStatus服务器监控"><a href="#安装ServerStatus服务器监控" class="headerlink" title="安装ServerStatus服务器监控"></a>安装ServerStatus服务器监控</h1><blockquote>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/cppla/ServerStatus" >https://github.com/cppla/ServerStatus<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<h1 id="灯光控制"><a href="#灯光控制" class="headerlink" title="灯光控制"></a>灯光控制</h1><p><a target="_blank" rel="noopener" href="https://github.com/starNGC2237/oneCloudLed"><img src="https://gh-card.dev/repos/starNGC2237/oneCloudLed.svg?fullname=" alt="starNGC2237/oneCloudLed - GitHub"></a></p>
+<h1 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h1>
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/post/blog-nginx.html"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">blog-nginx</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/post/git%E6%93%8D%E4%BD%9C.html"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">git操作</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Keep Team</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+
+
+
+<div class="post-scripts">
+    
+</div>
+
+
+
+</body>
+</html>
