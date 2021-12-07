@@ -234,27 +234,13 @@
 </blockquote>
 <ol>
 <li>依次执行：</li>
-<li><pre><code>sudo apt-get install build-essential cmake git libjson-c-dev libwebsockets-dev
-</code></pre>
-</li>
-<li><pre><code>git clone https://github.com/tsl0922/ttyd.git
-</code></pre>
-</li>
-<li><pre><code>chmod u+x ttyd
-</code></pre>
-</li>
-<li><pre><code>cd ttyd &amp;&amp; mkdir build &amp;&amp; cd build
-</code></pre>
-</li>
-<li><pre><code>cmake ..
-</code></pre>
-</li>
-<li><pre><code>make &amp;&amp; sudo make install
-</code></pre>
-</li>
-<li><pre><code>sudo ./ttyd -p 7681 login
-</code></pre>
-</li>
+<li> sudo apt-get install build-essential cmake git libjson-c-dev libwebsockets-dev</li>
+<li> git clone <a class="link"   target="_blank" rel="noopener" href="https://github.com/tsl0922/ttyd.git" >https://github.com/tsl0922/ttyd.git<i class="fas fa-external-link-alt"></i></a></li>
+<li> chmod u+x ttyd</li>
+<li> cd ttyd &amp;&amp; mkdir build &amp;&amp; cd build</li>
+<li> cmake ..</li>
+<li> make &amp;&amp; sudo make install</li>
+<li> sudo ./ttyd -p 7681 login</li>
 <li>安装完成后访问ip:7681即可使用ttyd</li>
 <li>ttyd自启动：</li>
 </ol>
