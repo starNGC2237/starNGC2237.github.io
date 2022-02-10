@@ -9,7 +9,7 @@
     
     <title>
         
-            quick_start_html_note |
+            js撞坑实录（不是） |
         
         指路天极&#39;s blog
     </title>
@@ -159,7 +159,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">quick_start_html_note</span>
+            <span class="title-hover-animation">js撞坑实录（不是）</span>
         </div>
 
         
@@ -177,15 +177,26 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-12-24 18:57:30
+        <i class="fas fa-edit"></i>&nbsp;2022-01-30 14:18:06
     </span>
     
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/javascript/">javascript</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
     
 
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>94 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>281 字</span>
         </span>
     
     
@@ -206,34 +217,23 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="lorem"><a href="#lorem" class="headerlink" title="lorem"></a>lorem</h2><p>占位字符</p>
-<h1 id="块级元素与内联元素"><a href="#块级元素与内联元素" class="headerlink" title="块级元素与内联元素"></a>块级元素与内联元素</h1><p>inline element</p>
-<p>即内联元素</p>
-<blockquote>
-<p>通常在块级元素内</p>
-</blockquote>
-<blockquote>
-<p>不会导致文本换行</p>
-</blockquote>
-<blockquote>
-<p>只占用必要的部分宽度</p>
-</blockquote>
-<p>block element</p>
-<p>即块级元素</p>
-<blockquote>
-<p>在页面以块的形式展现</p>
-</blockquote>
-<blockquote>
-<p>出现在新的一行</p>
-</blockquote>
-<blockquote>
-<p>占全部宽度</p>
-</blockquote>
-<p>blockquote</p>
-<p>即长的引用，块元素</p>
-<p>abbr<br>即缩略语</p>
-<p>cite<br>即引用</p>
+            <h2 id="浮点数计算问题"><a href="#浮点数计算问题" class="headerlink" title="浮点数计算问题"></a>浮点数计算问题</h2><h3 id="关于浮点数加减乘除不对"><a href="#关于浮点数加减乘除不对" class="headerlink" title="关于浮点数加减乘除不对"></a>关于浮点数加减乘除不对</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a =<span class="number">0.1</span>+<span class="number">0.2</span></span><br><span class="line">a = <span class="number">0.30000000000000004</span> !=<span class="number">0.3</span></span><br></pre></td></tr></table></figure>
+<p>是底层的计算问题</p>
+<p>解决方法：</p>
+<ul>
+<li>使用库 Math.js<br><a class="link"   href="https://link.zhihu.com/?target=http://mathjs.org/" >官网<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+<p><a class="link"   href="https://link.zhihu.com/?target=https://github.com/josdejong/mathjs" >GitHub<i class="fas fa-external-link-alt"></i></a></p>
+<ul>
+<li>使用toFixed()方法<br>该方法使用定点表示法来格式化一个数，会对结果进行四舍五入。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numObj.toFixed(digits)</span><br></pre></td></tr></table></figure>
+参数digits表示小数点后数字的个数；介于 0 到 20 （包括）之间，实现环境可能支持更大范围。如果忽略该参数，则默认为 0。</li>
+</ul>
+<p><strong>但是！ 此方法返回值为String</strong></p>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a =<span class="number">0.1</span>+<span class="number">0.2</span></span><br><span class="line">a.toFixed(<span class="number">10</span>) == <span class="number">0.3</span></span><br></pre></td></tr></table></figure>
 
+
+<h2 id="拷贝问题"><a href="#拷贝问题" class="headerlink" title="拷贝问题"></a>拷贝问题</h2><h3 id="拷贝对象"><a href="#拷贝对象" class="headerlink" title="拷贝对象"></a>拷贝对象</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 为什么要克隆（因为js中相等是将对象地址相等</span><br><span class="line">// 克隆对象的方法：</span><br><span class="line">// loash的方法(一般使用) _.cloneDeep(value)（深拷贝）（和递归一样）</span><br><span class="line">// 递归查找至基础数据类型</span><br><span class="line">// 转为string再转回来 （undefined、function、symbol 会在转换过程中被忽略）</span><br><span class="line">// es6语法 const a=&#123;...b&#125; 如果其中有对象（例如b:&#123;a:1&#125;），对象b转换后依然是原地址（即a与b的b指向同一个）</span><br></pre></td></tr></table></figure>
         </div>
 
         
@@ -244,13 +244,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/post/js%E6%92%9E%E5%9D%91%E5%AE%9E%E5%BD%95%EF%BC%88%E4%B8%8D%E6%98%AF%EF%BC%89.html"
+                           href="/post/sass%E5%85%A5%E9%97%A8-1.html"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">js撞坑实录（不是）</span>
+                                <span class="post-nav-title-item">sass入门-1</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -260,10 +260,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/post/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%94%B6%E9%9B%86.html"
+                           href="/post/quick-start-html-note.html"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">前端技术收集</span>
+                                <span class="post-nav-title-item">quick_start_html_note</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -389,7 +389,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#lorem"><span class="nav-number">1.</span> <span class="nav-text">lorem</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0%E4%B8%8E%E5%86%85%E8%81%94%E5%85%83%E7%B4%A0"><span class="nav-number"></span> <span class="nav-text">块级元素与内联元素</span></a>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0%E8%AE%A1%E7%AE%97%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">浮点数计算问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E4%B8%8D%E5%AF%B9"><span class="nav-number">1.1.</span> <span class="nav-text">关于浮点数加减乘除不对</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%B7%E8%B4%9D%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">拷贝问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%B7%E8%B4%9D%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.1.</span> <span class="nav-text">拷贝对象</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
