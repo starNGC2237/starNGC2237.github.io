@@ -233,46 +233,63 @@
 
 <p>表示将input.sass编译为output.css</p>
 <h3 id="监视sass变化并编译"><a href="#监视sass变化并编译" class="headerlink" title="监视sass变化并编译"></a>监视sass变化并编译</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sass --watch input.scss:ouput.css</span><br></pre></td></tr></table></figure>
+
 <p>表示监视变化，当input.scss一变化，output.css就变化</p>
 <h3 id="监视文件夹"><a href="#监视文件夹" class="headerlink" title="监视文件夹"></a>监视文件夹</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sass --watch yuan:bian</span><br></pre></td></tr></table></figure>
+
 <p>表示：当名字为yuan这个文件夹里任意一个.scss后缀的文件变化时，就将其编译到名字bian这个文件夹里面（会自动生成相应的.css文件）</p>
 <h2 id="基础用法"><a href="#基础用法" class="headerlink" title="基础用法"></a>基础用法</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>定义一个变量：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$yanse:rgb(122,122,122)</span><br></pre></td></tr></table></figure>
+
 <p>使用：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">i&#123;</span><br><span class="line">  color:$yanse;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>套娃：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$yanse:rgb(122,122,122)</span><br><span class="line">$kuang:1px solid $yanse;</span><br></pre></td></tr></table></figure>
 
 <h3 id="嵌套"><a href="#嵌套" class="headerlink" title="嵌套"></a>嵌套</h3><p>例如：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">    height:100px;</span><br><span class="line">    ul&#123;</span><br><span class="line">        height:80px;</span><br><span class="line">        li&#123;</span><br><span class="line">            height:50px;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>伪类选择器：&amp;:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">div&#123; </span><br><span class="line">    height: 100px; </span><br><span class="line">    ul&#123; </span><br><span class="line">        height: 80px; </span><br><span class="line">        li&#123; </span><br><span class="line">            height: 50px; </span><br><span class="line">            &amp;:hover &#123;</span><br><span class="line">                color: #000; </span><br><span class="line">            &#125; </span><br><span class="line">        &#125; </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>属性嵌套：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">    border: 1px solid red &#123;</span><br><span class="line">        left: 0; </span><br><span class="line">        top: 0; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>相当于：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    border: 1px solid red;</span><br><span class="line">    border-left: 0;</span><br><span class="line">    border-top: 0; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="mixin-混入（相当于预先写好了一组样式，其它地方直接引用）"><a href="#mixin-混入（相当于预先写好了一组样式，其它地方直接引用）" class="headerlink" title="mixin 混入（相当于预先写好了一组样式，其它地方直接引用）"></a>mixin 混入（相当于预先写好了一组样式，其它地方直接引用）</h2><h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@mixin 名字（参数1，参数2，...） &#123;</span><br><span class="line">    ........样式....... </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>例：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@mixin hunhe &#123; </span><br><span class="line">    color: red; </span><br><span class="line">    a &#123; </span><br><span class="line">        font-size: 12px; </span><br><span class="line">    &#125; </span><br><span class="line">&#125; </span><br><span class="line">div&#123;</span><br><span class="line">    @include hunhe; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>相当于：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">div &#123; color: red; &#125; </span><br><span class="line">div a &#123; font-size: 12px; &#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="带参数"><a href="#带参数" class="headerlink" title="带参数"></a>带参数</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@mixin hunhe($one,$two) &#123; </span><br><span class="line">    color: $one; </span><br><span class="line">    a &#123; </span><br><span class="line">        color: $one; font-size: $two; </span><br><span class="line">    &#125; </span><br><span class="line">&#125; </span><br><span class="line">div&#123; </span><br><span class="line">    @include hunhe(red,15px); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>或：(指定参数名，可以变换参数位置)</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">div&#123; @include hunhe($two:15px,$one:red); &#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="继承-扩展（一个选择器可以继承另一个选择器的全部样式）"><a href="#继承-扩展（一个选择器可以继承另一个选择器的全部样式）" class="headerlink" title="继承/扩展（一个选择器可以继承另一个选择器的全部样式）"></a>继承/扩展（一个选择器可以继承另一个选择器的全部样式）</h2><p>例如：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.one&#123;</span><br><span class="line">    color: #000;</span><br><span class="line">&#125; </span><br><span class="line">.one a&#123; </span><br><span class="line">    font-size: 10px; </span><br><span class="line">&#125; </span><br><span class="line">.two&#123; </span><br><span class="line">    @extend .one; </span><br><span class="line">    background-color: #fff; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>.two会继承.one的所有样式，包括子代<br>相当于：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.one, .two &#123; </span><br><span class="line">    color: #000; </span><br><span class="line">&#125; </span><br><span class="line">.one a, .two a &#123; </span><br><span class="line">    font-size: 10px; </span><br><span class="line">&#125; </span><br><span class="line">.two &#123;</span><br><span class="line">    background-color: #fff;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="import-引入文件"><a href="#import-引入文件" class="headerlink" title="@import 引入文件"></a>@import 引入文件</h2><p>Sass 中 <code>@import</code> 指令则可以位于文件中的任意位置。</p>
 <h3 id="引入scss文件"><a href="#引入scss文件" class="headerlink" title="引入scss文件"></a>引入scss文件</h3><p>使用<code>@import &quot;colors&quot;;</code>引入colors.scss文件</p>
 <h3 id="使用SCSS部分文件"><a href="#使用SCSS部分文件" class="headerlink" title="使用SCSS部分文件"></a><strong>使用SCSS部分文件</strong></h3><p>当通过<code>@import</code>把<code>scss</code>样式分散到多个文件时，你通常只想生成少数几个<code>css</code>文件。那些专门为<code>@import</code>命令而编写的<code>scss</code>文件，并不需要生成对应的独立<code>css</code>文件，这样的<code>scss</code>文件称为局部文件。对此，<code>sass</code>有一个特殊的约定来命名这些文件。</p>
 <p>即<em><strong>在文件名前加 _</strong></em><br>注意，此引入的不会生成该文件的css文件<br>例：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@import &quot;themes/night-sky&quot;;</span><br></pre></td></tr></table></figure>
+
 <h3 id="默认变量值"><a href="#默认变量值" class="headerlink" title="默认变量值"></a>默认变量值</h3><p>一般情况下，后面的变量值会覆盖前面的变量值<br>我们可以通过加!default<br>例如：<br>有blue.scss文件</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$link-color: blue !default;</span><br></pre></td></tr></table></figure>
+
 <p>我们在文件中导入</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$link-color: red;</span><br><span class="line">@import &#x27;blue&#x27;</span><br></pre></td></tr></table></figure>
+
 <p>此时颜色为红色</p>
 
         </div>

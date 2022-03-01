@@ -218,6 +218,7 @@
 
         <div class="article-content markdown-body">
             <h2 id="浮点数计算问题"><a href="#浮点数计算问题" class="headerlink" title="浮点数计算问题"></a>浮点数计算问题</h2><h3 id="关于浮点数加减乘除不对"><a href="#关于浮点数加减乘除不对" class="headerlink" title="关于浮点数加减乘除不对"></a>关于浮点数加减乘除不对</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a =<span class="number">0.1</span>+<span class="number">0.2</span></span><br><span class="line">a = <span class="number">0.30000000000000004</span> !=<span class="number">0.3</span></span><br></pre></td></tr></table></figure>
+
 <p>是底层的计算问题</p>
 <p>解决方法：</p>
 <ul>
@@ -226,12 +227,12 @@
 <p><a class="link"   href="https://link.zhihu.com/?target=https://github.com/josdejong/mathjs" >GitHub<i class="fas fa-external-link-alt"></i></a></p>
 <ul>
 <li>使用toFixed()方法<br>该方法使用定点表示法来格式化一个数，会对结果进行四舍五入。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numObj.toFixed(digits)</span><br></pre></td></tr></table></figure>
+
 参数digits表示小数点后数字的个数；介于 0 到 20 （包括）之间，实现环境可能支持更大范围。如果忽略该参数，则默认为 0。</li>
 </ul>
 <p><strong>但是！ 此方法返回值为String</strong></p>
 <p>例如：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a =<span class="number">0.1</span>+<span class="number">0.2</span></span><br><span class="line">a.toFixed(<span class="number">10</span>) == <span class="number">0.3</span></span><br></pre></td></tr></table></figure>
-
 
 <h2 id="拷贝问题"><a href="#拷贝问题" class="headerlink" title="拷贝问题"></a>拷贝问题</h2><h3 id="拷贝对象"><a href="#拷贝对象" class="headerlink" title="拷贝对象"></a>拷贝对象</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 为什么要克隆（因为js中相等是将对象地址相等</span><br><span class="line">// 克隆对象的方法：</span><br><span class="line">// loash的方法(一般使用) _.cloneDeep(value)（深拷贝）（和递归一样）</span><br><span class="line">// 递归查找至基础数据类型</span><br><span class="line">// 转为string再转回来 （undefined、function、symbol 会在转换过程中被忽略）</span><br><span class="line">// es6语法 const a=&#123;...b&#125; 如果其中有对象（例如b:&#123;a:1&#125;），对象b转换后依然是原地址（即a与b的b指向同一个）</span><br></pre></td></tr></table></figure>
         </div>
